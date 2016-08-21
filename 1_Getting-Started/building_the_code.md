@@ -80,9 +80,9 @@ Rebooting.
 [100%] Built target upload
 ```
 
-### Raspberry Pi 2 boards
+### 树莓派2开发板
 
-The command below builds the target for Raspbian (posix_pi2_release).
+下面的命令是树莓派板子的编译命令(posix_pi2_release)
 
 <div class="host-code"></div>
 
@@ -90,22 +90,23 @@ The command below builds the target for Raspbian (posix_pi2_release).
 cd Firmware
 make posix_rpi2_release # for cross-compiler build
 ```
+主运行程序“mainapp”文件在 build_posix_rpi2_release/src/firmware/posix. 路径下。
+复制程序（用你的IP或者RPI的主机名替代 YOUR_PI）[如何使用树莓派的简介] (../5_Autopilot-Hardware/raspeberry_pi2.md#developer-quick-start))
 
-The "mainapp" executable file is in the directory build_posix_rpi2_release/src/firmware/posix.
-Copy it over to the RPi (replace YOUR_PI with the IP or hostname of your RPi, [instructions how to access your RPi](../5_Autopilot-Hardware/raspeberry_pi2.md#developer-quick-start))
 
 ```sh
 scp build_posix_rpi2_release/src/firmware/posix/mainapp pi@YOUR_PI:/home/pi/
 ```
+运行程序
 
-And run it with :
 <div class="host-code"></div>
 
 ```sh
 ./mainapp
 ```
 
-If you're building *directly* on the Pi, you will want the native build target (posix_pi2_default).
+如果你在树莓派上编译，你需要使用本地编译方式(posix_pi2_default).
+
 
 <div class="host-code"></div>
 
@@ -113,9 +114,9 @@ If you're building *directly* on the Pi, you will want the native build target (
 cd Firmware
 make posix_rpi2_default # for native build
 ```
+“mainapp”可执行文件在路径 build_posix_rpi2_default/src/firmware/posix.
+执行方式：
 
-The "mainapp" executable file is in the directory build_posix_rpi2_default/src/firmware/posix.
-Run it directly with :
 <div class="host-code"></div>
 
 ```sh
